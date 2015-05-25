@@ -8,6 +8,7 @@ class Registration(models.Model):
     def __str__(self):
         return self.login
 
+    id = models.AutoField(primary_key=True)
     login = models.CharField('login:', max_length=32, unique=True)
     email = models.EmailField('email', max_length=32, unique=True,)
     password = models.CharField('password', max_length=32, null=True)
@@ -15,7 +16,7 @@ class Registration(models.Model):
 
 
 class Contact(models.Model):
-    user = models.ForeignKey(Registration)
+    registration = models.ForeignKey(Registration)
     last_name = models.CharField('last name', max_length=32)
     first_name = models.CharField('first name', max_length=32)
     patronymic = models.CharField('patronymic', max_length=32)

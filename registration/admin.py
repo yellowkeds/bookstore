@@ -6,7 +6,7 @@ class Information(admin.StackedInline):
     model = Contact
     extra = 1
 
-class InformationAdmin(admin.ModelAdmin):
+class InformationDisplay(admin.ModelAdmin):
     inlines = [Information]
 
-admin.site.register(Registration, InformationAdmin)
+admin.site.register(Registration, InformationDisplay)
