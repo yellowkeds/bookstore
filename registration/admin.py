@@ -2,11 +2,17 @@ from django.contrib import admin
 from .models import Registration, Contact
 
 # Register your models here.
-class Information(admin.StackedInline):
+class UserInfo(admin.StackedInline):
     model = Contact
     extra = 1
 
-class InformationDisplay(admin.ModelAdmin):
-    inlines = [Information]
+class UserInfoPosition(admin.ModelAdmin):
+    list_display = ['id','login', 'email']
 
-admin.site.register(Registration, InformationDisplay)
+    fieldsets = [
+        ('New User Registration', {'fields': ['login', 'email', 'password', 'repeat_password']})
+    ]
+
+    inlines = [UserInfo]
+
+admin.site.register(Registration, UserInfoPosition)
