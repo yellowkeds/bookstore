@@ -118,19 +118,19 @@
       <column name="house_fraction" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="appartment" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="index" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="registration_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
-      <foreign-key name="#FAKE_registration_contact_1" columns="user_id" ref-table="registration_registration" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <index name="registration_contact_e8701ad4" unique="true" columns="user_id"/>
+      <foreign-key name="#FAKE_registration_contact_1" columns="registration_id" ref-table="registration_registration" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="registration_contact_d9f527ed" unique="true" columns="registration_id"/>
     </table>
     <table name="registration_registration" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="login" sqlType="VARCHAR(32)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <column name="email" sqlType="VARCHAR(32)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <column name="password" sqlType="VARCHAR(32)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
       <column name="repeat_password" sqlType="VARCHAR(32)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
-      <exported-key name="#FAKE_registration_contact_1" table="registration_contact" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_registration_contact_1" table="registration_contact" schema="" catalog="" columns="registration_id"/>
     </table>
     <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
       <column name="name" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
