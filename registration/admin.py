@@ -9,7 +9,7 @@ class UserInfo(admin.StackedInline):
 
 class UserInfoPosition(admin.ModelAdmin):
     search_fields = ['email']
-    list_display = ['id','login', 'email']
+    list_display = ['id','login', 'email', 'date_filed']
 
     fieldsets = [
         ('New User Registration', {'fields': ['login', 'email', 'password', 'repeat_password']})
